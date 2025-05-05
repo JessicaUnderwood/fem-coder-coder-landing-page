@@ -1,3 +1,30 @@
+/* barlow-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/barlow-v12-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/barlow-v12-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/barlow-v12-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
 :root {
   --orange: hsl(22, 89%, 52%);
   --orange-Lt: hsl(22, 100%, 69%);
@@ -14,7 +41,7 @@
 }
 
 body {
-  font-family: Ariel, Helvetica, sans-serif;
+  font-family: 'Barlow', Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -28,4 +55,40 @@ button {
   font-family: inherit;
 }
 
+button:hover {
+  cursor: pointer;
+}
 
+.button {
+  font-size: 1rem;
+  line-height: 1.625;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 16px 26px;
+  border: 0;
+  border-radius: 8px;
+  transition: 150ms ease-out;
+  transition-property: background-color, color;
+}
+
+.button.blue {
+  background-color: var(--grey-Lt);
+  color: var(--blue);
+}
+
+.button.blue:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.button.orange {
+
+}
+
+/* grid styles */
+
+.grid-main {
+  display: grid;
+  /* this code means the middle column cant get bigger than 800px (50rem) */
+  grid-template-columns: 1fr min(100%, 50rem) 1fr;
+}
